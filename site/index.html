@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>markdown-it-latex-plus: serious LaTeX for markdown-it</title>
+  <meta name="description" content="MathJax 4 math plus TikZ, pgfplots, chemistry, diagrams and charts for markdown-it. Built for pages that render what AI agents write.">
+  <meta property="og:title" content="markdown-it-latex-plus">
+  <meta property="og:description" content="Serious LaTeX for markdown-it, plus the figures your agent wants to draw.">
+  <meta property="og:image" content="https://markdown-it-latex-plus.pages.dev/og.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233b2f6b'/%3E%3Ctext x='32' y='45' font-size='40' text-anchor='middle' fill='%23fff' font-family='Georgia,serif' font-style='italic'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">markdown-it-latex-plus</a>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#playground">Playground</a>
+      <a href="#use">Use it</a>
+      <a href="https://github.com/sune-org/markdown-it-latex-plus">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Serious LaTeX for markdown-it.<br><em>Plus the figures your agent wants to draw.</em></h1>
+      <p class="lede">MathJax 4 for the math. Real TikZ, pgfplots, circuits and chemistry compiled in the browser. Mermaid, Graphviz, charts, sheet music and molecules from fenced blocks. One plugin, loaded piece by piece, with everything sanitised.</p>
+      <div class="cta">
+        <code class="install">npm i markdown-it-latex-plus</code>
+        <a class="btn" href="#playground">Try the playground</a>
+      </div>
+      <div id="glance" class="glance" aria-label="A few rendered examples"></div>
+    </section>
+
+    <section id="agent" class="band">
+      <div class="band-text">
+        <h2>Tell your agent what it can draw</h2>
+        <p>Paste this into the system prompt of any model whose replies you render with the plugin. It is also exported as <code>prompt</code>, so your app can stay in step with the version it ships.</p>
+      </div>
+      <div class="prompt">
+        <button id="copy" type="button">Copy</button>
+        <pre id="prompt"></pre>
+      </div>
+    </section>
+
+    <section id="gallery"></section>
+
+    <section id="playground">
+      <h2>Playground</h2>
+      <p class="blurb">Type Markdown on the left. Math typesets as you type; figures render when their block is closed.</p>
+      <div class="play">
+        <textarea id="input" spellcheck="false" aria-label="Markdown input"></textarea>
+        <div id="output" class="md" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="use">
+      <h2>Use it</h2>
+      <div class="use">
+        <div>
+          <h3>In the browser</h3>
+          <pre><code>import MarkdownIt from 'markdown-it'
+import latexPlus from 'markdown-it-latex-plus'
+
+const md = MarkdownIt().use(latexPlus)
+
+node.innerHTML = md.render(text)  // instant, cached work included
+md.latexPlus.hydrate(node)        // fills in whatever is new</code></pre>
+          <p>Call both after every chunk while a reply streams. Finished formulas and figures come straight from the cache, so nothing flickers.</p>
+        </div>
+        <div>
+          <h3>On the server</h3>
+          <pre><code>const md = MarkdownIt().use(latexPlus)
+
+const html = await md.latexPlus.render(text)
+const css = md.latexPlus.css()</code></pre>
+          <p>Math is typeset in Node. Figures are sent as their source and drawn by <code>hydrate()</code> on the client.</p>
+        </div>
+      </div>
+      <p class="more">Options, security notes and self-hosting are in the <a href="https://github.com/sune-org/markdown-it-latex-plus/tree/main/docs">docs</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for <a href="https://github.com/sune-org/sune">Sune</a>. Stands on MathJax, TikZJax, Mermaid, Graphviz, Vega-Lite, abcjs, SmilesDrawer and DOMPurify.</p>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

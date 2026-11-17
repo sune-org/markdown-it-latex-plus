@@ -1,0 +1,42 @@
+{
+  "name": "markdown-it-latex-plus",
+  "version": "0.1.0",
+  "description": "Serious LaTeX for markdown-it: MathJax 4 math plus TikZ, pgfplots, chemistry, diagrams and charts that AI agents can write.",
+  "keywords": ["markdown-it", "markdown-it-plugin", "latex", "mathjax", "math", "tikz", "pgfplots", "mhchem", "mermaid", "graphviz", "vega-lite", "llm"],
+  "homepage": "https://markdown-it-latex-plus.pages.dev",
+  "repository": { "type": "git", "url": "git+https://github.com/sune-org/markdown-it-latex-plus.git" },
+  "bugs": "https://github.com/sune-org/markdown-it-latex-plus/issues",
+  "license": "MIT-0",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./src/index.js" },
+    "./package.json": "./package.json"
+  },
+  "imports": {
+    "#math": { "browser": "./src/math.browser.js", "default": "./src/math.node.js" },
+    "#engines": { "browser": "./src/engines.js", "default": "./src/engines.node.js" }
+  },
+  "types": "./index.d.ts",
+  "files": ["src", "index.d.ts", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "test": "node --test test/",
+    "e2e": "node scripts/e2e.js",
+    "shots": "node scripts/shots.js",
+    "prepack": "node scripts/readme.js",
+    "postpack": "node scripts/readme.js clean"
+  },
+  "peerDependencies": { "markdown-it": ">=13.0.0" },
+  "dependencies": {
+    "mathjax": "4.1.*",
+    "@mathjax/mathjax-mhchem-font-extension": "4.1.*",
+    "@mathjax/mathjax-bbm-font-extension": "4.1.*",
+    "@mathjax/mathjax-dsfont-font-extension": "4.1.*"
+  },
+  "devDependencies": {
+    "jsdom": "31.0.*",
+    "markdown-it": "15.0.*",
+    "playwright": "1.65.*"
+  },
+  "engines": { "node": ">=20" }
+}
