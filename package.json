@@ -20,7 +20,7 @@
   "files": ["src", "index.d.ts", "README.md", "LICENSE"],
   "sideEffects": false,
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/plugin.test.js test/smoke.mjs",
     "e2e": "node scripts/e2e.js",
     "shots": "node scripts/shots.js",
     "prepack": "node scripts/readme.js",
