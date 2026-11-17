@@ -77,8 +77,8 @@ $$` },
   \draw (0,0) to[V, v=$V_s$] (0,3) to[R, l=$R_1$] (3,3) to[C, l=$C$] (3,0) -- (0,0);
   \draw (3,3) to[R, l=$R_2$] (6,3) to[L, l=$L$] (6,0) -- (3,0);
 \end{circuitikz}`) },
-  { id: 'chemfig', group: 'tikz', title: 'chemfig', md: fence('tikz', r`
-\chemfig{*6(=-=(-C(=[1]O)-[7]OH)-(-O-[1]C(=[2]O)-[0]CH_3)=-)}`) },
+  { id: 'chemfig', group: 'tikz', title: 'chemfig: amphetamine', md: fence('tikz', r`
+\chemfig{*6(=-=(-[:30]-[:-30](-[6]NH_2)-[:30])-=-)}`) },
   { id: 'surface', group: 'tikz', title: 'pgfplots: 3D surface', md: fence('tikz', r`
 \begin{tikzpicture}
 \begin{axis}[width=9cm, height=6.4cm, view={45}{35}, xlabel=$x$, ylabel=$y$]
@@ -141,7 +141,7 @@ M:4/4
 L:1/4
 K:C
 E E F G | G F E D | C C D E | E3/2 D/2 D2 |`) },
-  { id: 'smiles', group: 'figures', title: 'Molecule from SMILES', md: fence('smiles', 'CN1C=NC2=C1C(=O)N(C(=O)N2C)C') },
+  { id: 'smiles', group: 'figures', title: 'Molecule from SMILES: amphetamine', md: fence('smiles', 'CC(N)Cc1ccccc1') },
   { id: 'svg', group: 'figures', title: 'Raw SVG, sanitised', md: fence('svg', `
 <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="g" x1="0" x2="1">

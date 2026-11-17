@@ -98,11 +98,11 @@ E E F G | G F E D | C C D E | E3/2 D/2 D2 |
 
 ````md
 ```smiles
-CN1C=NC2=C1C(=O)N(C(=O)N2C)C
+CC(N)Cc1ccccc1
 ```
 ````
 
-One molecule as a [SMILES](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System) string. `smiles: { width, height, theme }` adjusts the drawing.
+One molecule (here amphetamine) as a [SMILES](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System) string. `smiles: { width, height, theme }` adjusts the drawing.
 
 For reaction equations use `\ce{…}` in math; for hand-drawn structures use `\chemfig` in a `tikz` block.
 
