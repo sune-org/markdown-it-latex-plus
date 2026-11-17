@@ -38,5 +38,5 @@
     "markdown-it": "15.0.*",
     "playwright": "1.65.*"
   },
-  "engines": { "node": ">=20" }
+  "engines": { "node": ">=22" }
 }
