@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://markdown-it-latex-plus.pages.dev/sitemap.xml

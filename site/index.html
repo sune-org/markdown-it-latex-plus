@@ -3,16 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>markdown-it-latex-plus: serious LaTeX for markdown-it</title>
-  <meta name="description" content="MathJax 4 math plus TikZ, pgfplots, chemistry, diagrams and charts for markdown-it. Built for pages that render what AI agents write.">
-  <meta property="og:title" content="markdown-it-latex-plus">
-  <meta property="og:description" content="Serious LaTeX for markdown-it, plus the figures your agent wants to draw.">
+  <title>markdown-it-latex-plus: LaTeX, TikZ and charts for markdown-it</title>
+  <meta name="description" content="markdown-it plugin for serious LaTeX: MathJax 4 math plus TikZ, pgfplots, chemistry, Mermaid, Graphviz and Vega-Lite figures. Built to render AI agent output.">
+  <link rel="canonical" href="https://markdown-it-latex-plus.pages.dev/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131217" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="markdown-it-latex-plus">
+  <meta property="og:url" content="https://markdown-it-latex-plus.pages.dev/">
+  <meta property="og:title" content="markdown-it-latex-plus: serious LaTeX for markdown-it">
+  <meta property="og:description" content="MathJax 4 math, plus the figures your agent wants to draw: TikZ, plots, circuits, chemistry, diagrams and charts.">
   <meta property="og:image" content="https://markdown-it-latex-plus.pages.dev/og.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233b2f6b'/%3E%3Ctext x='32' y='45' font-size='40' text-anchor='middle' fill='%23fff' font-family='Georgia,serif' font-style='italic'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="markdown-it-latex-plus: rendered equations, a plot, a molecule and a diagram">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"markdown-it-latex-plus","url":"https://markdown-it-latex-plus.pages.dev/"},{"@type":"SoftwareSourceCode","name":"markdown-it-latex-plus","description":"A markdown-it plugin for LaTeX math (MathJax 4) and figures: TikZ, pgfplots, chemistry, Mermaid, Graphviz, Vega-Lite, sheet music and molecules.","url":"https://markdown-it-latex-plus.pages.dev/","codeRepository":"https://github.com/sune-org/markdown-it-latex-plus","programmingLanguage":"JavaScript","runtimePlatform":"Node.js, web browsers","license":"https://spdx.org/licenses/MIT-0.html","author":{"@type":"Organization","name":"PlanetRenox"},"sameAs":"https://www.npmjs.com/package/markdown-it-latex-plus"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400..800&display=swap">
 </head>
 <body>
   <header class="top">
-    <a class="brand" href="#">markdown-it-latex-plus</a>
+    <a class="brand" href="/">markdown-it-latex-plus</a>
     <nav>
       <a href="#gallery">Gallery</a>
       <a href="#playground">Playground</a>
@@ -29,6 +44,7 @@
       <div class="cta">
         <code class="install">npm i markdown-it-latex-plus</code>
         <a class="btn" href="#playground">Try the playground</a>
+        <a class="btn ghost" href="https://www.npmjs.com/package/markdown-it-latex-plus">View on npm</a>
       </div>
       <div id="glance" class="glance" aria-label="A few rendered examples"></div>
     </section>
@@ -44,7 +60,19 @@
       </div>
     </section>
 
-    <section id="gallery"></section>
+    <section id="gallery">
+      <h2 id="latex">LaTeX math</h2>
+      <p class="blurb">MathJax 4 with the packages people actually use: AMS, mathtools, mhchem, cancel, bussproofs, colortbl, xy-pic and more. Dollars, brackets and bare environments all work.</p>
+      <div class="cards" data-group="latex"></div>
+
+      <h2 id="tikz">TikZ and friends</h2>
+      <p class="blurb">Real TeX, compiled to WebAssembly and run in the browser: TikZ, pgfplots, tikz-cd, circuitikz and chemfig. The engine loads the first time a figure needs it.</p>
+      <div class="cards" data-group="tikz"></div>
+
+      <h2 id="figures">Diagrams, charts and more</h2>
+      <p class="blurb">Mermaid, Graphviz, Vega-Lite, sheet music, molecules and raw SVG from fenced code blocks. Each renderer is fetched on first use and its output is sanitised before it reaches the page.</p>
+      <div class="cards" data-group="figures"></div>
+    </section>
 
     <section id="playground">
       <h2>Playground</h2>
@@ -83,7 +111,7 @@ const css = md.latexPlus.css()</code></pre>
   </main>
 
   <footer>
-    <iframe class="sponsor" src="https://github.com/sponsors/multipleof4/button" title="Sponsor multipleof4" height="32" width="114"></iframe>
+    <iframe class="sponsor" src="https://github.com/sponsors/multipleof4/button" title="Sponsor multipleof4" height="32" width="114" loading="lazy"></iframe>
     <p>Stands on MathJax, TikZJax, Mermaid, Graphviz, Vega-Lite, abcjs, SmilesDrawer and DOMPurify.</p>
   </footer>
   <script type="module" src="/src/main.js"></script>

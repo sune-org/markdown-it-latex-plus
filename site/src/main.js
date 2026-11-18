@@ -1,6 +1,6 @@
 import MarkdownIt from 'markdown-it'
 import latexPlus, { prompt } from 'markdown-it-latex-plus'
-import { groups, examples, playground } from './examples.js'
+import { examples, playground } from './examples.js'
 import './style.css'
 
 // TikZ assets are served by this site, so use them from wherever the page is running.
@@ -25,16 +25,13 @@ $('#copy').onclick = async e => {
 
 const pick = id => examples.find(x => x.id === id)
 $('#glance').append(...['align', 'plot', 'chemfig', 'sequence', 'circuit', 'vega', 'xypic', 'smiles'].map(id =>
-  el('a', { className: 'tile', href: `#ex-${id}`, title: pick(id).title }, later(el('div', { className: 'md' }), pick(id).md))))
+  el('a', { className: 'tile', href: `#ex-${id}`, title: pick(id).title, ariaLabel: pick(id).title }, later(el('div', { className: 'md' }), pick(id).md))))
 
-$('#gallery').append(...groups.flatMap(g => [
-  el('h2', { id: g.id, textContent: g.title }),
-  el('p', { className: 'blurb', textContent: g.blurb }),
-  el('div', { className: 'cards' }, ...examples.filter(x => x.group === g.id).map(x => el('article', { className: 'card', id: `ex-${x.id}` },
-    el('h3', { textContent: x.title }),
-    el('pre', { className: 'src' }, el('code', { textContent: x.md })),
-    later(el('div', { className: 'out md' }), x.md)))),
-]))
+// Headings and blurbs are in index.html, where crawlers read them without running this script.
+for (const box of document.querySelectorAll('.cards')) box.append(...examples.filter(x => x.group === box.dataset.group).map(x => el('article', { className: 'card', id: `ex-${x.id}` },
+  el('h3', { textContent: x.title }),
+  el('pre', { className: 'src' }, el('code', { textContent: x.md })),
+  later(el('div', { className: 'out md' }), x.md))))
 
 const input = $('#input'), output = $('#output')
 let timer

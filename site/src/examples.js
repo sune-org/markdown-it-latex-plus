@@ -1,12 +1,6 @@
 // Every example is plain Markdown, exactly as a person or a model would write it.
 const r = String.raw, fence = (lang, body) => '```' + lang + '\n' + body.trim() + '\n```'
 
-export const groups = [
-  { id: 'latex', title: 'LaTeX math', blurb: 'MathJax 4 with the packages people actually use: AMS, mathtools, mhchem, cancel, bussproofs, colortbl, xy-pic and more. Dollars, brackets and bare environments all work.' },
-  { id: 'tikz', title: 'TikZ and friends', blurb: 'Real TeX, compiled to WebAssembly and run in the browser: TikZ, pgfplots, tikz-cd, circuitikz and chemfig. The engine loads the first time a figure needs it.' },
-  { id: 'figures', title: 'Diagrams, charts and more', blurb: 'Fenced blocks handed to small renderers, each fetched on first use and sanitised before it reaches the page.' },
-]
-
 export const examples = [
   { id: 'inline', group: 'latex', title: 'Inline and display', md: r`The Gaussian integral $\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$ sits in a sentence, and \(e^{i\pi} + 1 = 0\) works too. A price like $5 stays a price.
 
