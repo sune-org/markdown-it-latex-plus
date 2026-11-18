@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-latex-plus",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "description": "Serious LaTeX for markdown-it: MathJax 4 math plus TikZ, pgfplots, chemistry, diagrams and charts that AI agents can write.",
   "keywords": ["markdown-it", "markdown-it-plugin", "latex", "mathjax", "math", "tikz", "pgfplots", "mhchem", "mermaid", "graphviz", "vega-lite", "llm"],
   "homepage": "https://markdown-it-latex-plus.pages.dev",

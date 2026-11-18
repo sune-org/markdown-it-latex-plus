@@ -4,7 +4,7 @@ Serious LaTeX for [markdown-it](https://github.com/markdown-it/markdown-it), plu
 
 <a href="https://markdown-it-latex-plus.pages.dev"><img src="img/glance.png" alt="Rendered examples: aligned equations, a pgfplots chart, a chemfig molecule, a Mermaid sequence diagram, a circuit, a Vega-Lite chart, an xy-pic diagram and a molecule drawn from SMILES"></a>
 
-**[Live gallery and playground →](https://markdown-it-latex-plus.pages.dev)**
+**[Live gallery and playground](https://markdown-it-latex-plus.pages.dev)** · **[npm](https://www.npmjs.com/package/markdown-it-latex-plus)**
 
 ## Prompt for your agent
 
@@ -29,7 +29,7 @@ Fenced code blocks that render as figures:
 npm i markdown-it-latex-plus
 ```
 
-Not on npm yet. Until it is, install from GitHub: `npm i github:sune-org/markdown-it-latex-plus`.
+[markdown-it-latex-plus on npm](https://www.npmjs.com/package/markdown-it-latex-plus)
 
 ## Use
 

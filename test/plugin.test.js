@@ -91,6 +91,7 @@ test('fenced blocks', () => {
   const d = dom(md.render('```mermaid\nflowchart LR\n A-->B\n```\n\n```graphviz\ndigraph{a->b}\n```\n\n```js\nlet a = 1\n```\n\n```pgfplots\n\\begin{axis}\\end{axis}\n```'))
   assert.deepEqual([...d.querySelectorAll('.mlp-block')].map(e => e.dataset.mlp), ['mermaid', 'dot', 'tikz'])
   assert.equal(d.querySelector('.mlp-block').textContent, 'flowchart LR\n A-->B')
+  assert.equal(d.querySelector('.mlp-block').dataset.src, 'flowchart LR\n A-->B')
   assert.equal(d.querySelectorAll('pre > code.language-js').length, 1)
   // still being typed: plain code until the closing fence arrives
   assert.equal(dom(md.render('```tikz\n\\begin{tikzpicture}\n\\draw (0,0)')).querySelectorAll('.mlp').length, 0)

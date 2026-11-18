@@ -42,7 +42,7 @@ export const runtime = (opt = {}) => {
     },
     block(k, src) {
       const v = cache.get(key(k, src))
-      if (!v) return rt.collect && E[k] && misses.push([k, src]), wrap('div', 'mlp-block mlp-pending', k, code(src))
+      if (!v) return rt.collect && E[k] && misses.push([k, src]), wrap('div', 'mlp-block mlp-pending', k, code(src), ` data-src="${esc(src)}"`)
       return v.e ? wrap('div', 'mlp-block mlp-error', k, `${code(src)}<p class="mlp-msg">${esc(v.e)}</p>`) : wrap('div', `mlp-block mlp-${k}`, k, v.h)
     },
   }
@@ -58,7 +58,8 @@ export const runtime = (opt = {}) => {
       DOM && o.css !== false && !document.getElementById('mlp-css') && style('mlp-css', rt.css())
       const els = [...root.querySelectorAll('.mlp-pending')]
       await Promise.all(els.map(async el => {
-        const k = el.dataset.mlp, src = el.textContent, d = !!el.dataset.d
+        // A figure's source travels in data-src: copy buttons and highlighters may have changed the visible <pre>.
+        const k = el.dataset.mlp, src = el.dataset.src ?? el.textContent, d = !!el.dataset.d
         if (k !== 'math' && !E[k]) return
         k === 'math' && await rt.ready().catch(() => {})
         await get(k, src, d)

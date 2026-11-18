@@ -7,7 +7,7 @@ export const base = `
 .mlp-pending{opacity:.6}
 .mlp-math.mlp-error{text-decoration:underline wavy #c8372d;text-underline-offset:3px}
 .mlp-block{margin:1em 0;padding:14px;border-radius:10px;background:#fff;color:#111;text-align:center;overflow-x:auto}
-.mlp-block>svg{max-width:100%;height:auto}
+.mlp-block>svg{display:block;margin:0 auto;max-width:100%;height:auto}
 .mlp-tikz{padding:22px 14px}
 .mlp-tikz svg{overflow:visible}
 .mlp-svg>svg,.mlp-abc>svg{max-height:26em}

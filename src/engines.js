@@ -107,7 +107,7 @@ export default o => {
 
     smiles: { async render(src) {
       const S = await lib('smiles'), at = mount(stage()), el = at.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'svg'))
-      const size = { width: 420, height: 300, ...o.smiles }
+      const size = { width: 340, height: 230, ...o.smiles }
       for (const k of ['width', 'height']) el.setAttribute(k, size[k])
       el.setAttribute('viewBox', `0 0 ${size.width} ${size.height}`)
       try {
