@@ -138,4 +138,4 @@ node scripts/shots.js            # redraw the images in this README
 
 ## Licence
 
-See [LICENSE](../LICENSE). The engines it loads at runtime keep their own licences, listed in [engines](engines.md).
+[MIT-0](../LICENSE): use it however you like, no attribution needed. The engines it loads at runtime keep their own licences, listed in [engines](engines.md).
